@@ -14,10 +14,15 @@ Author: Rajat Kumar, rajat.kumar@stonybrook.edu; rajatkgupta@protonmail.ch
 3) Install the Environment: conda env create  -f environment.yml -n BrainDancer
 
 #### To run, follow the steps below (ipynb files needs to be opened in Jupyter Notebook ):
-1) Before any data-analysis, the phantom data should be corrected for spatial intensity non-uniformity (INU). We recommend using the N4ITK algorithm implemented in ANTs Toolbox. Download and installation is available from: http://stnava.github.io/ANTs/.
+1) Before any data-analysis, the phantom data should be corrected for spatial intensity non-uniformity (INU). We recommend using the N4ITK algorithm implemented in ANTs Toolbox. Download and installation is available from: http://stnava.github.io/ANTs/. <br/>
 *Recommended settings for N4ITK:* --bspline-fitting [300] -d 4 --convergence [150x150x150, 1e-06]. 
 
-2) Run extract_ts_phantom.ipynb: This generates the ground-truth data and extracts the voxel time-series from fMRI output. Needs Phantom-Log file, slice-acquistion order in csv format, and phantom fMRI output in nifti format. 
+2) Run extract_ts_phantom.ipynb: This generates the ground-truth data and extracts the voxel time-series from fMRI output. Needs phantom-log file obtained from your BrainDancer device, slice-acquistion order of your acquistion protocol in csv format, and INU-corrected fMRI measurement in nifti format.<br/> <br/>
+*Visual inspection and decision making when running extract_ts_phantom.ipynb*
+![BrainDancer](https://github.com/RajatKGupta/fMRI_BrainDancer/blob/master/assets/slices.png)
+
+*After slice selection, if you observe no contours for a slice - the default threshold being used is too high for your dataset. The program will prompt you to enter a new threshold.*
+![BrainDancer](https://github.com/RajatKGupta/fMRI_BrainDancer/blob/master/assets/thresholding.png)
 
 3) Run ML.ipynb: This implements training of CNN for learning noise characteristics. It requires three nifti files that were generated in step 1 output (scanner data, ground-truth data and masks). 
 
