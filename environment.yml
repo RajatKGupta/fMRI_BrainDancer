@@ -1,0 +1,34 @@
+name: BrainDancer
+
+dependencies:
+  - pip
+  - h5py=2.7.1=py36ha8ecd60_2
+  - hdf5=1.10.2=hfa1e0ec_1
+  - scikit-learn=0.19.1=py36hffbff8c_0
+  - pip:
+    - colorednoise==1.0.0
+    - keras==2.2.4
+    - keras-applications==1.0.7
+    - keras-preprocessing==1.0.9
+    - matplotlib==2.2.2
+    - nilearn==0.5.0
+    - nipype==1.2.3
+    - nistats==0.0.1b0
+    - numpy==1.14.3
+    - pandas==0.23.0
+    - permute==0.1a5
+    - pymc3==3.3
+    - scikit-image==0.13.1
+    - scipy==1.1.0
+    - seaborn==0.9.0
+    - sklearn-crfsuite==0.3.6
+    - statsmodels==0.10.0
+    - tensor==0.3.6
+    - tensorboard==1.10.0
+    - tensorflow==1.4.1
+    - tensorflow-tensorboard==0.4.0
+    - tflearn==0.3.2
+    - theano==1.0.4
+    - torch==1.0.1.post2
+    - torchvision==0.2.2.post3 
+    - nibabel==2.3.0
