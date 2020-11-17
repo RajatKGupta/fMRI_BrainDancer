@@ -21,12 +21,12 @@ Before any data-analysis, the phantom data should be corrected for spatial inten
 </p>
  
 
-## To denoise for scanner-induced variance, follow the steps below (Jupyter Notebooks are preferred and best for visual inspection during the analysis):
+## To denoise fMRI data from scanner-induced variance, follow the steps below (Jupyter Notebooks are preferred for the analysis):
 1) Run Example_TimeSeriesExtraction.ipynb: This file provides a skeleton code for generating the ground-truth data and extracts the voxel time-series from fMRI output. Needs phantom-log file obtained from your BrainDancer device, slice-acquistion order of your acquistion protocol in csv format, and INU-corrected fMRI measurement in nifti format.<br/> <br/>
-*Visual inspection and decision making when running extract_ts_phantom.ipynb*
+*Visual inspection and decision making when running Example_TimeSeriesExtraction.ipynb*
 ![BrainDancer](https://github.com/RajatKGupta/fMRI_BrainDancer/blob/master/assets/slices.png)
 
-*After slice selection, if you observe no contours for a slice - the default threshold being used is too high for your dataset. The program will prompt you to enter a new threshold.*
+*After slice selection, if you observe no contours for a slice - the default threshold being used is incorrect for your dataset. The program will prompt you to enter a new threshold.*
 ![BrainDancer](https://github.com/RajatKGupta/fMRI_BrainDancer/blob/master/assets/thresholding.png)
 
 2) Run Example_TrainingCNN.ipynb: This implements training of CNN for learning noise characteristics. It requires three nifti files that were generated in step 1 output (measured fMRI data, ground-truth data and masks). 
@@ -37,13 +37,14 @@ Before any data-analysis, the phantom data should be corrected for spatial inten
 ## For caluclating data-quality metrics, follow the steps below:
 1) Run Example_TimeSeriesExtraction.ipynb: This file provides a skeleton code for generating the ground-truth data and extracts the voxel time-series from fMRI output. Needs phantom-log file obtained from your BrainDancer device, slice-acquistion order of your acquistion protocol in csv format, and INU-corrected fMRI measurement in nifti format.<br/>
 
-2) Run Example_DataQualityAssesment.ipynb: This file provides code for calculating data quality metrics *Standardized SNR (ST-SNR), Dynamic Fidelity and Scanner Instability*, as defined in [Kumar et. al.](https://arxiv.org/abs/2004.06760). It requires three nifti files that were generated in step 1 output (measured fMRI data, ground-truth data and masks). 
+2) Run Example_DataQualityAssesment.ipynb: This file provides code for calculating data quality metrics namely – *Standardized SNR (ST-SNR), Dynamic Fidelity and Scanner Instability*, as defined in [Kumar et. al.](https://arxiv.org/abs/2004.06760). It requires three nifti files that were generated in step 1 output (measured fMRI data, ground-truth data and masks). 
 
 
-### To be made available in next public release:
+### To be made available in next release:
 1) Analysis routines for static phantoms - Temporal Singal-to-Fluctuation-Noise Ratio (SFNR), Weisskoff plot "Radius of Decorrelation".
 2) Analysis routines for instability measurement using the FBIRN phantom, with two flip angle measurement [method]( https://onlinelibrary.wiley.com/doi/pdf/10.1002/mrm.22691). 
 3) Colored noise based motion sequence generator for the phantom.</br></br>
+
 
 
 
