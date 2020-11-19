@@ -41,7 +41,7 @@ Before any data-analysis, the phantom data should be corrected for spatial inten
 
 
 ### To be made available in next release:
-1) Analysis routines for static phantoms - Temporal Singal-to-Fluctuation-Noise Ratio (SFNR), Weisskoff plot "Radius of Decorrelation".
+1) Analysis routines for static phantoms - Temporal Signal-to-Fluctuation-Noise Ratio (SFNR), Weisskoff plot "Radius of Decorrelation".
 2) Analysis routines for instability measurement using the FBIRN phantom, with two flip angle measurement [method]( https://onlinelibrary.wiley.com/doi/pdf/10.1002/mrm.22691). 
 3) Colored noise based motion sequence generator for the phantom.</br></br>
 
