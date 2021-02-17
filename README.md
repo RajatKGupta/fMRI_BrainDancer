@@ -2,7 +2,7 @@
 
 ![BrainDancer](https://github.com/RajatKGupta/fMRI_BrainDancer/blob/master/assets/cover.png)
 
-This repository contains code for quantifying and removing scanner-induced noise from fMRI data using the BrainDancer Dynamic Phantom. Details about the dynamic phantom and analysis algorithms are provided in the accompanying manuscript: https://arxiv.org/abs/2004.06760.
+This repository contains code for quantifying and removing scanner-induced noise from fMRI data using the BrainDancer Dynamic Phantom. Details about the dynamic phantom and analysis algorithms are provided in the accompanying manuscript:https://www.sciencedirect.com/science/article/pii/S1053811920310697?dgcid=rss_sd_all
 
 
 Author: Rajat Kumar, rajat.kumar@stonybrook.edu; rajatkgupta@protonmail.ch
@@ -34,7 +34,7 @@ Before any data-analysis, the phantom data should be corrected for spatial inten
 3) Run Example_Denoising.ipynb: This implements data denoising using the trained CNN. It requires data to be denoised (phantom or human) as numpy array and the .h5 trained weights file from step 2. 
 
 
-## For caluclating data-quality metrics, follow the steps below:
+## For calculating data-quality metrics, follow the steps below:
 1) Run Example_TimeSeriesExtraction.ipynb: This file provides a skeleton code for generating the ground-truth data and extracts the voxel time-series from fMRI output. Needs phantom-log file obtained from your BrainDancer device, slice-acquistion order of your acquistion protocol in csv format, and INU-corrected fMRI measurement in nifti format.<br/>
 
 2) Run Example_DataQualityAssesment.ipynb: This file provides code for calculating data quality metrics namely – *Standardized SNR (ST-SNR), Dynamic Fidelity and Scanner Instability*, as defined in [Kumar et. al.](https://arxiv.org/abs/2004.06760). It requires three nifti files that were generated in step 1 output (measured fMRI data, ground-truth data and masks). 
