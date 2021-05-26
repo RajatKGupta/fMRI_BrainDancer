@@ -24,7 +24,7 @@ from statsmodels.tsa.tsatools import detrend
 # =============================================================================
 def phantom_motion(log_path,first_motion_slice=200):
     log = pd.read_csv(log_path)
-    final_pos = log['CurPos'].values 
+    final_pos = log['EndPos'].values 
     positions = final_pos
     positions = positions.flatten() * 0.04392
     for index in range(len(positions)):
