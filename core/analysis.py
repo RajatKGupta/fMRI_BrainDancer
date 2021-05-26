@@ -40,7 +40,7 @@ def create_denoising_dataset(epi_path,log_path,acqtimes_path,rot_dir=-1):
     end = int(input('Enter the last good slice: '))
     
     log = pd.read_csv(log_path)
-    motion_time = np.max(log['tMotionTime'].values)
+    motion_time = np.max(log['Tmot'].values)
     acq_times = pd.read_csv(acqtimes_path)
     motionfree = acq_times[acq_times['Time']>motion_time]['Slice'].values
     total_slices = []    
